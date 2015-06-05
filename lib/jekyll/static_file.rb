@@ -80,7 +80,8 @@ module Jekyll
 
       FileUtils.mkdir_p(File.dirname(dest_path))
       FileUtils.rm(dest_path) if File.exist?(dest_path)
-      FileUtils.cp(path, dest_path)
+      #FileUtils.cp(path, dest_path)
+      File.write(dest_path, File.read(path))
 
       true
     end
